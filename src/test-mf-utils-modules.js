@@ -7,4 +7,4 @@ export const isSidebarMenuItemsVisible = (roles) => {
 
   return roles.includes(currentRole);
 };
-export * from './layout-utils.js';
+export * from './app-configurator/index.js';

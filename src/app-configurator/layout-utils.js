@@ -1,14 +1,16 @@
-let _layoutConfig = {
-  menuMode: 'static',
-  darkTheme: true,
-  topbarTheme: 'dark',
-  menuTheme: 'dim',
-  menuProfilePosition: 'top',
-  // Add defaults for new keys if not present
-  primary: 'blue',
-  surface: 'slate',
-  layoutTheme: 'default'
-};
+const storedConfig = localStorage.getItem('layout-config');
+let _layoutConfig = storedConfig
+  ? JSON.parse(storedConfig)
+  : {
+      menuMode: 'static',
+      darkTheme: true,
+      topbarTheme: 'dark',
+      menuTheme: 'dim',
+      menuProfilePosition: 'top',
+      primary: 'blue',
+      surface: 'slate',
+      layoutTheme: 'default'
+    };
 
 let _layoutState = {
   staticMenuDesktopInactive: false,
@@ -71,6 +73,7 @@ export function updateLayoutConfig(patch) {
   if (typeof _layoutConfig.surface === 'undefined') _layoutConfig.surface = 'slate';
   if (typeof _layoutConfig.layoutTheme === 'undefined') _layoutConfig.layoutTheme = 'default';
 
+  localStorage.setItem('layout-config', JSON.stringify(_layoutConfig));
   window.dispatchEvent(new CustomEvent('layout-updated')); // <-- Aquí lo haces automático
 }
 
@@ -128,4 +131,8 @@ export function setSurfaceColor(color) {
   updateLayoutConfig({
     surface: color
   });
+}
+// ---- Surface palette event utility ----
+export function applySurfacePalette(palette) {
+  window.dispatchEvent(new CustomEvent('surface-updated', { detail: palette }));
 }
