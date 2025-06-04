@@ -1,17 +1,18 @@
 export const defaultLayoutConfig = {
-  primaryColor: 'indigo',
+  menuMode: 'static',
+  darkTheme: false,
   topbarTheme: 'blue',
   menuTheme: 'white',
-  colorScheme: 'light', // 'light' (false) o 'dark' (true)
-  menuMode: 'static',
-  surface: 'slate',
+  primary: 'indigo',
+  surface: null, //'slate',
+  menuProfilePosition: 'top',
 };
 
 export const layoutOptionFlags = {
-  enablePrimaryColor: true,
-  enableTopbarTheme: true,
-  enableMenuTheme: true,
+  enablePrimaryColor: false,
+  enableTopbarTheme: false,
+  enableMenuTheme: false,
   enableColorScheme: true,
-  enableMenuMode: true,
-  enableSurface: true,
+  enableMenuMode: false,
+  enableSurface: false,
 };

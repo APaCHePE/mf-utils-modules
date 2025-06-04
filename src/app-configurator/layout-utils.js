@@ -1,15 +1,12 @@
+import {
+  defaultLayoutConfig
+} from './default.js';
+
 const storedConfig = localStorage.getItem('layout-config');
 let _layoutConfig = storedConfig
   ? JSON.parse(storedConfig)
   : {
-      menuMode: 'static',
-      darkTheme: true,
-      topbarTheme: 'dark',
-      menuTheme: 'dim',
-      menuProfilePosition: 'top',
-      primary: 'blue',
-      surface: 'slate',
-      layoutTheme: 'default'
+      ...defaultLayoutConfig
     };
 
 let _layoutState = {
