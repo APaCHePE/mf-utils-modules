@@ -9,4 +9,4 @@ export const isSidebarMenuItemsVisible = (roles) => {
 };
 export * from './app-configurator/index.js';
 export * from './api/index.js';
-export * from './utils/jwt.utils';
+export * from './utils/index.js';

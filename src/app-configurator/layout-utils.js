@@ -1,6 +1,6 @@
 import {
   defaultLayoutConfig
-} from './default.js';
+} from './configurator.constants.js';
 
 const storedConfig = localStorage.getItem('layout-config');
 let _layoutConfig = storedConfig
