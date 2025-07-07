@@ -5,4 +5,5 @@ export const AUTH_KEYS = {
 
 export const MODULE_KEYS = {
   USER_OPTIONS: 'options',
+  MODULE_ACTIVE: 'activeModuleId',
 };

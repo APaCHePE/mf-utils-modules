@@ -28,7 +28,6 @@ export function getLayoutState() {
 }
 
 export function getContainerClass() {
-  console.log('getContainerClass called');
   const config = getLayoutConfig();
   const state = getLayoutState();
   return {

@@ -9,7 +9,7 @@ export function getUserIdFromToken(token) {
   return payload?.user?.idUsuario ?? null;
 }
 export function getModuleDefault(token) {
-  if (!token) {
+  if (!token || typeof token !== 'string' || token.trim() === '') {
     console.error('Token is required but was not provided.');
     return 0;
   }
